@@ -2,13 +2,107 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>My Website</title>
+  <title>Freda Kreig - HTML Developer</title>
+  <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;700&display=swap" rel="stylesheet">
+  <style>
+    body {
+      margin: 0;
+      font-family: 'Open Sans', sans-serif;
+      background-color: #fff;
+    }
+    .container {
+      display: flex;
+      max-width: 900px;
+      margin: 0 auto;
+      box-shadow: 0 0 10px rgba(0,0,0,0.1);
+    }
+    .sidebar {
+      background-color: #f4f0ec;
+      width: 300px;
+      padding: 30px;
+      color: #333;
+    }
+    .main {
+      padding: 30px;
+      flex-grow: 1;
+    }
+    h1 {
+      margin-top: 0;
+    }
+    h2 {
+      border-bottom: 1px solid #000;
+      padding-bottom: 4px;
+      margin-top: 40px;
+    }
+    ul {
+      padding-left: 20px;
+    }
+    .contact, .education, .skills {
+      margin-bottom: 40px;
+    }
+    .contact p, .skills p {
+      margin: 8px 0;
+    }
+    .job-title {
+      font-weight: bold;
+    }
+    .job-dates {
+      font-style: italic;
+      margin-bottom: 6px;
+    }
+  </style>
 </head>
 <body>
-  <h1>Welcome to My Website</h1>
-  <p>This is a basic HTML page hosted on GitHub Pages.</p>
+  <div class="container">
+    <div class="sidebar">
+      <img src="https://via.placeholder.com/100" alt="Profile" style="border-radius: 50%; margin-bottom: 20px;">
+      <div class="contact">
+        <h3>Contact Details</h3>
+        <p>fredakreig@gmail.com</p>
+        <p>(610) 484 2016</p>
+        <p>Kshlerinmouth, 62442, Rhode Island</p>
+      </div>
+      <div class="education">
+        <h3>Education</h3>
+        <p><strong>Bachelor of Science in Web Design and Development</strong><br>University of Washington<br>2017 - 2021</p>
+      </div>
+      <div class="skills">
+        <h3>Skills</h3>
+        <p>HTML coding - Expert</p>
+        <p>CSS styling - Expert</p>
+        <p>JavaScript - Expert</p>
+        <p>Responsive design - Expert</p>
+        <p>Cross-browser compatibility - Expert</p>
+        <p>Web standards - Expert</p>
+      </div>
+    </div>
+    <div class="main">
+      <h1>Freda Kreig</h1>
+      <h3>Html Developer</h3>
+
+      <h2>Summary</h2>
+      <p>Experienced HTML Developer specializing in creating user-friendly website designs. Skilled in HTML5, CSS, JavaScript, and WordPress. Collaborates with cross-functional teams to develop websites that meet customer needs.</p>
+
+      <h2>Work Experience</h2>
+      <p class="job-title">Html Developer, Goyette, Buckridge and Weimann</p>
+      <p class="job-dates">March 2023 - Present</p>
+      <ul>
+        <li>Developed over 50 webpages using HTML5, CSS3, and JavaScript.</li>
+        <li>Built and maintained multiple webpages with optimized loading time.</li>
+        <li>Collaborated with designers to develop user-friendly websites.</li>
+      </ul>
+
+      <p class="job-title">Html Developer, Hand LLC</p>
+      <p class="job-dates">May 2021 - February 2023</p>
+      <ul>
+        <li>Developed and maintained websites according to W3C standards.</li>
+        <li>Created webpages with cross-browser compatibility.</li>
+        <li>Developed websites with responsive design for optimal viewing on multiple devices.</li>
+      </ul>
+
+      <h2>References</h2>
+      <p>References available upon request</p>
+    </div>
+  </div>
 </body>
 </html>
-
-<!-- test -->

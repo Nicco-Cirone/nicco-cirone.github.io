@@ -91,6 +91,18 @@ body {
   .job-location {
     font-style: italic;
   }
+  
+  .contact-icons {
+  display: flex;
+  gap: 10px;
+  margin-top: 10px;
+}
+
+.contact-icons .icon {
+  width: 40px;
+  height: 40px;
+}
+
 </style>
 
 </head>
@@ -99,8 +111,15 @@ body {
     <div class="sidebar">
       <img src="photo.jpg" alt="Niccolo Cirone" style="border-radius: 50%; width: 170px; height: 170px; object-fit: cover; margin-bottom: 20px;">
       <div class="contact">
-        <h3>Contact Details</h3>
-        <p><a href="mailto:nicco.cirone@gmail.com">nicco.cirone@gmail.com</a></p>
+        <h3>Online Profiles</h3>
+        <div class="contact-icons">
+        <a href="https://www.linkedin.com/in/niccolocirone/">
+        <img src="Linkedin.png" alt="LinkedIn Icon" class="icon">
+        </a>
+        <a href="https://public.tableau.com/app/profile/nicco.cirone/vizzes">
+        <img src="Tableau.png" alt="Tableau Icon" class="icon">
+        </a>
+        </div>
         <p> </p>
         <p>📍 Rome, Italy</p>
         <p>📍 Dakar, Senegal</p>

@@ -151,25 +151,26 @@ body {
 @media (max-width: 768px) {
   body {
     padding: 0;
-    font-size: 13px; /* down from default 14px */
+    font-size: 13px; /* Reduce text size by ~1pt */
   }
 
   .container {
-    flex-direction: column;
+    flex-direction: row; /* Keep side-by-side layout */
+    width: 100vw;        /* Use full viewport width */
+    max-width: 100vw;    /* Prevent any margin-based shrinking */
     margin: 0 auto;
-    width: 100%;
   }
 
   .sidebar,
   .main {
-    width: 100%;
     padding: 20px;
+    width: 50%;          /* Equal width on mobile */
     box-sizing: border-box;
   }
 
   .sidebar img {
-    width: 130px;
-    height: 130px;
+    width: 120px;        /* Smaller profile image */
+    height: 120px;
   }
 
   .contact-icons .icon,
@@ -178,6 +179,7 @@ body {
     height: 32px;
   }
 }
+
 
   
 </style>

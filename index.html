@@ -142,6 +142,35 @@ body {
   border-radius: 50%;
   object-fit: cover;
 }
+
+  @media (max-width: 768px) {
+    .container {
+      flex-direction: column;
+      margin: 0 10px;
+      box-shadow: none;
+    }
+
+    .sidebar, .main {
+      width: 100%;
+      padding: 20px;
+      box-sizing: border-box;
+    }
+
+    .main {
+      text-align: left;
+    }
+
+    .justified-paragraph {
+      text-align: left;
+    }
+  }
+
+  .main {
+    padding: 30px;
+    flex-grow: 1;
+    max-width: 600px;
+    margin: auto;
+  }
   
 </style>
 

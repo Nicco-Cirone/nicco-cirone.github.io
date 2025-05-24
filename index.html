@@ -180,7 +180,9 @@
   text-decoration: none;
   color: inherit;
   margin-left: 4px;
-  font-size: 0.9em; /* optional: size tuning */
+  font-size: 0.9em;
+  display: inline-block; /* This is the key line */
+  transition: transform 0.2s ease, color 0.2s ease;
 }
 
 .tooltip-link {

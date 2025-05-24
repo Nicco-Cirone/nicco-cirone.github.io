@@ -4,6 +4,9 @@
   <meta charset="UTF-8" name="description" content="Nicco Cirone – AI & Data Analytics Manager, with experience both in the UN and private sector. Expert in AI Strategies, Data Analytics, and Technology 4 Development">
   <meta name="viewport" content="width=device-width">
 
+  <link rel="preload" href="/fonts/OpenSans-Regular.woff2" as="font" type="font/woff2" crossorigin>
+  <link rel="preload" href="/fonts/OpenSans-Bold.woff2" as="font" type="font/woff2" crossorigin>
+  
   <!-- Favicon for browsers -->
 <link rel="icon" type="image/png" sizes="16x16" href="/img/favicon/favicon-16x16.png">
 <link rel="icon" type="image/png" sizes="32x32" href="/img/favicon/favicon-32x32.png">
@@ -21,9 +24,26 @@
   
   <title>Nicco Cirone - AI & Data Analytics Manager</title>
   
-  <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;700&display=swap" rel="stylesheet">
+<!--  <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;700&display=swap" rel="stylesheet"> -->
 <style>
-body {
+
+  @font-face {
+  font-family: 'Open Sans';
+  font-style: normal;
+  font-weight: 400;
+  src: url('/fonts/OpenSans-Regular.woff2') format('woff2');
+  font-display: swap;
+}
+
+  @font-face {
+    font-family: 'Open Sans';
+    font-style: normal;
+    font-weight: 700;
+    src: url('/fonts/OpenSans-Bold.woff2') format('woff2');
+    font-display: swap;
+  }
+  
+  body {
   margin: 0;
   padding: 20px 0 40px 0;
   font-family: 'Open Sans', sans-serif;

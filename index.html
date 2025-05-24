@@ -183,6 +183,36 @@
   font-size: 0.9em; /* optional: size tuning */
 }
 
+.tooltip-link {
+  position: relative;
+  cursor: pointer;
+  text-decoration: none;
+  color: inherit;
+}
+
+.tooltip-link::after {
+  content: attr(data-tooltip);
+  position: absolute;
+  bottom: 125%; /* place above the icon */
+  left: 50%;
+  transform: translateX(-50%);
+  background-color: #333;
+  color: #fff;
+  padding: 4px 8px;
+  border-radius: 4px;
+  font-size: 12px;
+  white-space: nowrap;
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity 0.2s ease;
+  z-index: 100;
+}
+
+.tooltip-link:hover::after {
+  opacity: 1;
+}
+
+
 @media (max-width: 768px) {
   body {
     padding: 0;
@@ -318,7 +348,7 @@
            target="_blank" 
            rel="noopener noreferrer" 
            aria-label="External link to article"
-           title="Data for Action Blog Post"> 🔗 </a>
+           data-tooltip="Data for Action Blog Post"> 🔗 </a>
         <a href="https://data.unicef.org/resources/reaching-the-unreached-with-life-saving-vaccines-through-data-science-and-geospatial-technologies/" 
            class="link-icon" 
            target="_blank" 

@@ -256,7 +256,13 @@
   body {
     background-color: #121212;
     color: #f0f0f0;
-    background-image: none; /* Optional: remove background pattern if not dark-friendly */
+    background-image: 
+      url('img/background-dark.webp'),
+      url('img/background-dark_mirror.webp');
+    background-repeat: repeat-y, repeat-y;
+    background-position: left top, right top;
+    background-attachment: fixed, fixed;
+    background-size: auto, auto;
   }
 
   .container {
@@ -288,6 +294,7 @@
     color: #4fc3f7;
   }
 }
+
   
 </style>
 

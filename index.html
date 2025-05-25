@@ -252,7 +252,42 @@
   }
 }
 
+@media (prefers-color-scheme: dark) {
+  body {
+    background-color: #121212;
+    color: #f0f0f0;
+    background-image: none; /* Optional: remove background pattern if not dark-friendly */
+  }
 
+  .container {
+    background-color: #1e1e1e;
+    box-shadow: 0 0 10px rgba(255,255,255,0.05);
+  }
+
+  .sidebar {
+    background-color: #222;
+    color: #eee;
+  }
+
+  .main {
+    background-color: #1e1e1e;
+    color: #f0f0f0;
+  }
+
+  h1, h2, h3, .job-title, .job-dates, .job-location {
+    color: #fff;
+  }
+
+  .tooltip-link::after {
+    background-color: #eee;
+    color: #222;
+  }
+
+  a.link-icon:hover,
+  .tooltip-link:hover {
+    color: #4fc3f7;
+  }
+}
   
 </style>
 

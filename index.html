@@ -219,6 +219,14 @@
     transition: color 0.2s ease, transform 0.2s ease;
   }
 
+  .mobile-section-block summary {
+  display: none;
+}
+
+  .desktop-section-block summary {
+    display: block;
+  }
+  
  @media (max-width: 768px) {
   body {
     padding: 0;
@@ -257,6 +265,18 @@
     width: 32px;
     height: 32px;
   }
+
+   .mobile-section-block summary {
+    display: block;
+    text-align: center;
+    margin: 20px 0;
+  }
+
+  .desktop-section-block summary {
+    display: none;
+  }
+
+   
 }
 
 
@@ -324,6 +344,12 @@
     </div>
     <p>📍 Rome, Italy</p>
     <p>📍 Dakar, Senegal</p>
+        <div class="mobile-section-block summary">
+          <h1>Niccolò Cirone</h1>
+          <h2 class="subheading">AI & Data Analytics Manager</h2>
+          <h2>Summary</h2>
+          <p class="justified-paragraph">Experienced data and AI programme manager with extensive know-how in leading multidisciplinary teams of data scientists, ML engineers, and subject matter experts to build and implement transformative AI solutions. Expert in co-designing, developing, and executing long term analytics and AI strategies for value generation, I bring over a decade of entrepreneurial, corporate, and consultancy experiences in the private sector, social sector, and the UN. Internationally educated and multi-lingual in English, French, and Italian. Recognized as a proactive, solution-oriented, self-starter and team player.</p>
+        </div>
   </div>
 
   <div class="section-block education">
@@ -379,7 +405,7 @@
 </div>
   
 <div class="main">
-  <div class="section-block summary">
+  <div class="desktop-section-block summary">
     <h1>Niccolò Cirone</h1>
     <h2 class="subheading">AI & Data Analytics Manager</h2>
     <h2>Summary</h2>

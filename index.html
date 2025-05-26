@@ -26,14 +26,13 @@
   
 <!--  <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;700&display=swap" rel="stylesheet"> -->
 <style>
-
   @font-face {
-  font-family: 'Open Sans';
-  font-style: normal;
-  font-weight: 400;
-  src: url('/fonts/OpenSans-Regular.woff2') format('woff2');
-  font-display: swap;
-}
+    font-family: 'Open Sans';
+    font-style: normal;
+    font-weight: 400;
+    src: url('/fonts/OpenSans-Regular.woff2') format('woff2');
+    font-display: swap;
+  }
 
   @font-face {
     font-family: 'Open Sans';
@@ -42,91 +41,61 @@
     src: url('/fonts/OpenSans-Bold.woff2') format('woff2');
     font-display: swap;
   }
-  
+
   body {
-  margin: 0;
-  padding: 20px 0 40px 0;
-  font-family: 'Open Sans', sans-serif;
-  background-color: #fff;
-  background-image: 
-    url('img/background.webp'),
-    url('img/background_mirror.webp');
-  background-repeat: 
-    repeat-y, 
-    repeat-y;
+    margin: 0;
+    padding: 20px 0 40px 0;
+    font-family: 'Open Sans', sans-serif;
+    background-color: #fff;
+    background-image:
+      url('img/background.webp'),
+      url('img/background_mirror.webp');
+    background-repeat:
+      repeat-y,
+      repeat-y;
+    background-position:
+      left top,
+      right top;
+    background-attachment:
+      fixed,
+      fixed;
+    background-size:
+      auto,
+      auto;
+    transform: none;
+  }
 
-  background-position: 
-    left top, 
-    right top;
+  .container {
+    width: 100%;
+    max-width: 900px;
+    margin: 20px auto;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    background-color: #fff;
+  }
 
-  background-attachment: 
-    fixed, 
-    fixed;
-
-  background-size: 
-    auto, 
-    auto;
-
-  transform: none;
-}
-
-.container {
-  display: flex;
-  flex-direction: row;
-  max-width: 900px;
-  margin: 20px auto;
-  box-shadow: 0 0 10px rgba(0,0,0,0.1);
-  background-color: #fff;
-  width: 100%;
-}
-
-  .sidebar {
-    background-color: #f4f0ec;
-    width: 300px;
+  .section-block {
     padding: 30px;
-    color: #333;
-  }
-
-.main {
-  padding: 30px;
-  flex-grow: 1;
-  box-sizing: border-box;
-  max-width: 100%;
-  overflow-wrap: break-word;
-}
-  
-  h1 {
-    margin-top: 0;
-  }
-
-  h2 {
-    border-bottom: 1px solid #000;
-    padding-bottom: 4px;
-    margin-top: 40px;
-  }
-
-  h2.subheading {
-    border: none;
-    padding: 0;
-    margin: 10px 0 20px 0;
-    font-size: 1.17em; /* default h3 size */
-    font-weight: bold;
-  }
-
-  ul {
-    padding-left: 20px;
+    box-sizing: border-box;
+    width: 100%;
   }
 
   .justified-paragraph {
-  text-align: justify;
-  text-justify: inter-word;
+    text-align: justify;
+    text-justify: inter-word;
   }
-  
-  .contact, .education, .skills, .languages, .certificates, .honors, .startups {
+
+  .contact,
+  .education,
+  .skills,
+  .languages,
+  .certificates,
+  .honors,
+  .startups {
     margin-bottom: 40px;
   }
 
-  .contact p, .skills p {
+  .contact p,
+  .skills p {
     margin: 8px 0;
   }
 
@@ -135,10 +104,10 @@
     margin-top: 30px;
   }
 
-    .job-title-first {
+  .job-title-first {
     font-weight: bold;
   }
-  
+
   .job-dates {
     font-style: italic;
   }
@@ -152,388 +121,352 @@
   .job-location {
     font-style: italic;
   }
-  
-  .contact-icons {
-  display: flex;
-  justify-content: center;
-  gap: 12px;
-  margin-top: 10px;
-}
 
-.contact-icons .icon {
-  width: 40px;
-  height: 40px;
-  margin-bottom: 40px;
-}
+  .contact-icons {
+    display: flex;
+    justify-content: center;
+    gap: 12px;
+    margin-top: 10px;
+  }
+
+  .contact-icons .icon {
+    width: 40px;
+    height: 40px;
+    margin-bottom: 40px;
+  }
 
   .startups-icons {
-  display: flex;
-  justify-content: center;
-  gap: 12px;
-  margin-top: 10px;
-}
-
-.startups-icons .icon {
-  width: 40px;
-  height: 40px;
-  margin-bottom: 40px;
-  border-radius: 50%;
-  object-fit: cover;
-}
-
-.link-icon {
-  text-decoration: none;
-  color: inherit;
-  margin-left: 4px;
-  font-size: 0.9em;
-  display: inline-block; /* This is the key line */
-  transition: transform 0.2s ease, color 0.2s ease;
-}
-
-.tooltip-link {
-  position: relative;
-  cursor: pointer;
-  text-decoration: none;
-  color: inherit;
-}
-
-.tooltip-link::after {
-  content: attr(data-tooltip);
-  position: absolute;
-  bottom: 125%; /* place above the icon */
-  left: 50%;
-  transform: translateX(-50%);
-  background-color: #333;
-  color: #fff;
-  padding: 4px 8px;
-  border-radius: 4px;
-  font-size: 12px;
-  white-space: nowrap;
-  opacity: 0;
-  pointer-events: none;
-  transition: opacity 0.2s ease;
-  z-index: 100;
-}
-
-.tooltip-link:hover::after {
-  opacity: 1;
-}
-
-.tooltip-link:hover {
-  color: #007acc;          /* or any brand color */
-  transform: scale(1.15);  /* optional: slight zoom */
-  transition: color 0.2s ease, transform 0.2s ease;
-}
-
-@media (max-width: 768px) {
-  body {
-    padding: 0;
-    font-size: 13px; /* Reduce text size by ~1pt */
+    display: flex;
+    justify-content: center;
+    gap: 12px;
+    margin-top: 10px;
   }
 
-  .container {
-    flex-direction: row; /* Keep side-by-side layout */
-    width: 100vw;        /* Use full viewport width */
-    max-width: 100vw;    /* Prevent any margin-based shrinking */
-    margin: 0 auto;
-  }
-
-  .sidebar,
-  .main {
-    padding: 20px;
-    width: 50%;          /* Equal width on mobile */
-    box-sizing: border-box;
-  }
-
-  .sidebar img {
-    width: 120px;        /* Smaller profile image */
-    height: 120px;
-  }
-
-  .contact-icons .icon,
   .startups-icons .icon {
-    width: 32px;
-    height: 32px;
-  }
-}
-
-@media (prefers-color-scheme: dark) {
-  body {
-    background-color: #121212;
-    color: #f0f0f0;
-    background-image: 
-      url('img/background-dark.webp'),
-      url('img/background-dark_mirror.webp');
-    background-repeat: repeat-y, repeat-y;
-    background-position: left top, right top;
-    background-attachment: fixed, fixed;
-    background-size: auto, auto;
+    width: 40px;
+    height: 40px;
+    margin-bottom: 40px;
+    border-radius: 50%;
+    object-fit: cover;
   }
 
-  .container {
-    background-color: #1e1e1e;
-    box-shadow: 0 0 10px rgba(255,255,255,0.05);
+  .link-icon {
+    text-decoration: none;
+    color: inherit;
+    margin-left: 4px;
+    font-size: 0.9em;
+    display: inline-block;
+    transition: transform 0.2s ease, color 0.2s ease;
   }
 
-  .sidebar {
-    background-color: #222;
-    color: #eee;
-  }
-
-  .main {
-    background-color: #1e1e1e;
-    color: #f0f0f0;
-  }
-
-  h1, h2, h3, .job-title, .job-dates, .job-location {
-    color: #fff;
+  .tooltip-link {
+    position: relative;
+    cursor: pointer;
+    text-decoration: none;
+    color: inherit;
   }
 
   .tooltip-link::after {
-    background-color: #eee;
-    color: #222;
+    content: attr(data-tooltip);
+    position: absolute;
+    bottom: 125%;
+    left: 50%;
+    transform: translateX(-50%);
+    background-color: #333;
+    color: #fff;
+    padding: 4px 8px;
+    border-radius: 4px;
+    font-size: 12px;
+    white-space: nowrap;
+    opacity: 0;
+    pointer-events: none;
+    transition: opacity 0.2s ease;
+    z-index: 100;
   }
 
-  a.link-icon:hover,
+  .tooltip-link:hover::after {
+    opacity: 1;
+  }
+
   .tooltip-link:hover {
-    color: #4fc3f7;
+    color: #007acc;
+    transform: scale(1.15);
+    transition: color 0.2s ease, transform 0.2s ease;
   }
-}
 
-  
+  @media (min-width: 769px) {
+    .container {
+      display: grid;
+      grid-template-columns: 300px 1fr;
+      gap: 0;
+    }
+
+    .contact,
+    .education,
+    .skills,
+    .languages,
+    .certificates,
+    .honors,
+    .startups {
+      grid-column: 1;
+      background-color: #f4f0ec;
+    }
+
+    .summary,
+    .work-experience {
+      grid-column: 2;
+    }
+  }
+
+  @media (max-width: 768px) {
+    body {
+      padding: 0;
+      font-size: 13px;
+    }
+
+    .container {
+      display: block;
+      padding: 0;
+      width: 100vw;
+    }
+
+    .section-block {
+      padding: 20px;
+    }
+
+    .contact-icons .icon,
+    .startups-icons .icon {
+      width: 32px;
+      height: 32px;
+    }
+
+    .contact img {
+      width: 120px;
+      height: 120px;
+    }
+  }
+
+  @media (prefers-color-scheme: dark) {
+    body {
+      background-color: #121212;
+      color: #f0f0f0;
+      background-image:
+        url('img/background-dark.webp'),
+        url('img/background-dark_mirror.webp');
+      background-repeat: repeat-y, repeat-y;
+      background-position: left top, right top;
+      background-attachment: fixed, fixed;
+      background-size: auto, auto;
+    }
+
+    .container {
+      background-color: #1e1e1e;
+      box-shadow: 0 0 10px rgba(255, 255, 255, 0.05);
+    }
+
+    .contact,
+    .education,
+    .skills,
+    .languages,
+    .certificates,
+    .honors,
+    .startups {
+      background-color: #222;
+      color: #eee;
+    }
+
+    .summary,
+    .work-experience {
+      background-color: #1e1e1e;
+      color: #f0f0f0;
+    }
+
+    h1, h2, h3, .job-title, .job-dates, .job-location {
+      color: #fff;
+    }
+
+    .tooltip-link::after {
+      background-color: #eee;
+      color: #222;
+    }
+
+    a.link-icon:hover,
+    .tooltip-link:hover {
+      color: #4fc3f7;
+    }
+  }
 </style>
 
 </head>
 <body>
-  <div class="container">
-    <div class="sidebar">
-      <img src="img/photo.webp" alt="Niccolò Cirone" style="border-radius: 50%; width: 170px; height: 170px; object-fit: cover; margin-bottom: 20px;">
-      <div class="contact">     
-        <!--<h3>Online Profiles</h3>-->
-        <div class="contact-icons">
-        <a href="https://www.linkedin.com/in/niccolocirone/" class="tooltip-link" data-tooltip="LinkedIn Profile" target="_blank" rel="noopener noreferrer">
+<div class="container">
+
+  <div class="section-block contact">
+    <img src="img/photo.webp" alt="Niccolò Cirone" style="border-radius: 50%; width: 170px; height: 170px; object-fit: cover; margin-bottom: 20px;">
+    <div class="contact-icons">
+      <a href="https://www.linkedin.com/in/niccolocirone/" class="tooltip-link" data-tooltip="LinkedIn Profile" target="_blank" rel="noopener noreferrer">
         <img src="img/Linkedin.webp" alt="LinkedIn Icon" class="icon">
-        </a>
-        <a href="https://public.tableau.com/app/profile/nicco.cirone/vizzes" class="tooltip-link" data-tooltip="Data Visualization Portfolio" target="_blank" rel="noopener noreferrer">
+      </a>
+      <a href="https://public.tableau.com/app/profile/nicco.cirone/vizzes" class="tooltip-link" data-tooltip="Data Visualization Portfolio" target="_blank" rel="noopener noreferrer">
         <img src="img/Tableau.webp" alt="Tableau Icon" class="icon">
-        </a>
-        <a href="https://niccocirone.wordpress.com/" class="tooltip-link" data-tooltip="Personal Blog" target="_blank" rel="noopener noreferrer">
+      </a>
+      <a href="https://niccocirone.wordpress.com/" class="tooltip-link" data-tooltip="Personal Blog" target="_blank" rel="noopener noreferrer">
         <img src="img/Wordpress.webp" alt="Wordpress Icon" class="icon">
-        </a>
-        </div>
-        <p>📍 Rome, Italy</p>
-        <p>📍 Dakar, Senegal</p>
-      </div>
-      <div class="education">
-        <h3>Education</h3>
-        <p><strong>Exchange Programme - International MBA</strong><br>Fudan University, Shanghai (China)<br>2014</p>
-        <p><strong>MSc. Management of Innovation</strong><br>LUISS University, Rome (Italy)<br>2011 - 2014</p>
-        <p><strong>BS. Philosophy</strong><br>RomaTre University, Rome (Italy)<br>2009 - 2011</p>
-
-      </div>
-      <div class="skills">
-        <h3>Skills</h3>
-        <p><strong>AI & ML Project Management</strong> - Expert</p>
-        <p><strong>Data Analytics Project Management</strong> - Expert</p>
-        <p><strong>Data Visualization</strong> - Expert</p>
-        <p><strong>ETL</strong> - Highly Skilled</p>
-        <p><strong>Data Collection & Real-Time Monitoring</strong> - Highly Skilled</p>
-        <p><strong>Technology Project Management</strong> - Skilled</p>
-      </div>
-
-      <div class="languages">
-        <h3>Languages</h3>
-        <p><strong>Italian</strong> – Native</p>
-        <p><strong>English</strong> – Complete proficiency</p>
-        <p><strong>French</strong> – Complete working knowledge</p>
-      </div>
-
-      <div class="certificates">
-        <h3>Certificates</h3>
-        <p><strong>Ethical AI in Practice</strong> - Data.org, May 2025</p>
-        <p><strong>Big Data For Social Good</strong> - Harvard Online, Oct 2024</p>
-      </div>
-
-      <div class="honors">
-        <h3>Honors & Awards</h3>
-        <p><strong>🏆 Values Ambassador (EMEA)</strong> - Tableau, 2017</p>
-      </div>
-
-      <div class="startups"> 
-      <h3>Startups</h3>
-      <p>Co-founded:</p>
-        <div class="startups-icons">
-        <a href="https://montedelgallo.com/" class="tooltip-link" data-tooltip="Monte del Gallo - Sofware Development Boutique" target="_blank" rel="noopener noreferrer">
-        <img src="img/MDG_100.webp" alt="MonteDelGallo Icon" class="icon">
-        </a>
-        <a href="https://impactintel.org/" class="tooltip-link" data-tooltip="Impact Intel - Analytics Consultancy for the Social Impact Sector" target="_blank" rel="noopener noreferrer">
-        <img src="img/Impact_Intel_100.webp" alt="Tableau Icon" class="icon">
-        </a>
-        <a href="https://consultala.com/" class="tooltip-link" data-tooltip="ConsultaLa - Accounting Sofware House" target="_blank" rel="noopener noreferrer">
-        <img src="img/consultala.webp" alt="Wordpress Icon" class="icon">
-        </a>
-        </div>
-      </div>
-      
+      </a>
     </div>
-    <div class="main">
-      <h1>Niccolò Cirone</h1>
-      <h2 class="subheading">AI & Data Analytics Manager</h2>
+    <p>📍 Rome, Italy</p>
+    <p>📍 Dakar, Senegal</p>
+  </div>
 
-      <h2>Summary</h2>
-      <p class="justified-paragraph">Experienced data and AI programme manager with extensive know-how in leading multidisciplinary teams of data scientists, ML engineers, and subject matter experts to build and implement transformative AI solutions. 
-        Expert in co-designing, developing, and executing long term analytics and AI strategies for value generation, I bring over a decade of entrepreneurial, corporate, and consultancy experiences in the private sector, social sector, and the UN. 
-        Internationally educated and multi-lingual in English, French, and Italian. Recognized as a proactive, solution-oriented, self-starter and team player. </p>
+  <div class="section-block education">
+    <h3>Education</h3>
+    <p><strong>Exchange Programme - International MBA</strong><br>Fudan University, Shanghai (China)<br>2014</p>
+    <p><strong>MSc. Management of Innovation</strong><br>LUISS University, Rome (Italy)<br>2011 - 2014</p>
+    <p><strong>BS. Philosophy</strong><br>RomaTre University, Rome (Italy)<br>2009 - 2011</p>
+  </div>
 
-      <h2>Work Experience</h2>
-      
-      <p class="job-title-first">Data Specialist (T4D), UNICEF West and Central Africa Regional Office</p>
-      <div class="job-meta">
-        <span class="job-dates">Nov. 2022 – Current</span>
-        <span class="job-location">Dakar, Senegal</span>
-      </div>
-      
-      <ul class="justified-paragraph">
-        <li style="margin-bottom: 0.5em;">Coordinate a diverse portfolio of data and AI initiatives to boost the efficacy and effectiveness of UNICEF's programming</li>
-        <li style="margin-bottom: 0.5em;">Co-led the development of UNICEF’s first corporate AI Strategy to identify high-impact opportunities for AI and analytics</li>
-        <li style="margin-bottom: 0.5em;">Led the "Reach the Unreached" initiative, securing over $2M in funding to apply AI for vaccination and birth registration
-        <a href="https://data.unicef.org/data-for-action/reaching-the-unreached-with-life-saving-vaccines-through-data-science-and-geospatial-technologies/"        
-           class="link-icon tooltip-link" 
-           target="_blank" 
-           rel="noopener noreferrer" 
-           aria-label="External link to article"
-           data-tooltip="Data for Action Blog Post"> 🔗 </a>
-        <a href="https://data.unicef.org/resources/reaching-the-unreached-with-life-saving-vaccines-through-data-science-and-geospatial-technologies/" 
-           class="link-icon tooltip-link" 
-           target="_blank" 
-           rel="noopener noreferrer" 
-           aria-label="External link to article"
-           data-tooltip="Technical Brief">🔗 </a>
-        <a href="https://www.unicef.org/blog/digital-zero-dose-harnessing-ai-global-health-equity" 
-           class="link-icon tooltip-link" 
-           target="_blank" 
-           rel="noopener noreferrer" 
-           aria-label="External link to article"
-           data-tooltip="Blog Post from the G20">🔗 </a>
-        <a href="https://mapaction.org/putting-children-on-the-map-in-west-and-central-africa-through-geo-spatial-analysis/" 
-           class="link-icon tooltip-link" 
-           target="_blank" 
-           rel="noopener noreferrer" 
-           aria-label="External link to article"
-           data-tooltip="Partner Article - MapAction">🔗 </a>
-        <a href="https://www.cartong.org/mettre-les-enfants-sur-la-carte-en-afrique-de-louest-et-du-centre-grace-a-lanalyse-geospatiale/" 
-           class="link-icon tooltip-link" 
-           target="_blank" 
-           rel="noopener noreferrer" 
-           aria-label="External link to article"
-           data-tooltip="Partner Article - CartONG">🔗 </a>
-        <a href="https://storymaps.arcgis.com/stories/f8802fc4dc424bbeab69093088ace38e/" 
-           class="link-icon tooltip-link" 
-           target="_blank" 
-           rel="noopener noreferrer" 
-           aria-label="External link to article"
-           data-tooltip="Storymap: RtU in Chad">🔗 </a>
-        </li>
-        <li style="margin-bottom: 0.5em;">Founded WCARO’s Regional Frontier Data Tech Node, mentoring junior data scientists and scaling AI initiatives across 24 countries</li>
-        <li>Presented at academic events and international summits to keep UNICEF at the forefront of AI trends</li>
-      </ul>
+  <div class="section-block skills">
+    <h3>Skills</h3>
+    <p><strong>AI & ML Project Management</strong> - Expert</p>
+    <p><strong>Data Analytics Project Management</strong> - Expert</p>
+    <p><strong>Data Visualization</strong> - Expert</p>
+    <p><strong>ETL</strong> - Highly Skilled</p>
+    <p><strong>Data Collection & Real-Time Monitoring</strong> - Highly Skilled</p>
+    <p><strong>Technology Project Management</strong> - Skilled</p>
+  </div>
 
-      <p class="job-title">Data Specialist (T4D), UNICEF East Asia and Pacific Regional Office</p>
-      <div class="job-meta">
-        <span class="job-dates">Sep. 2020 - Nov. 2022</span>
-        <span class="job-location">Bangkok, Thailand</span>
-      </div>
-      <ul class="justified-paragraph">
-        <li style="margin-bottom: 0.5em;">Founded and coordinated UNICEF’s first Regional Frontier Data Tech Node to enhance AI project execution
-           <a href="https://www.unicef.org/eap/stories/how-big-data-and-ai-saved-lives-indonesia"
-           class="link-icon tooltip-link" 
-           target="_blank" 
-           rel="noopener noreferrer" 
-           aria-label="External link to article"
-           data-tooltip="How Big Data and AI Saved Lives in Indonesia">🔗 </a>
-           <a href="https://www.unicef.org/png/reports/revolutionizing-immunization-data-management-papua-new-guinea-rt-vama"
-           class="link-icon tooltip-link" 
-           target="_blank" 
-           rel="noopener noreferrer" 
-           aria-label="External link to article"
-           data-tooltip="RT-VaMA: Real Time Monitoring of Immunization Campaigns">🔗 </a>
-        </li>
-        <li style="margin-bottom: 0.5em;">Raised over $600,000 to develop InForm, UNICEF’s common data platform
-           <a href="https://inform.unicef.org/" 
-           class="link-icon tooltip-link" 
-           target="_blank" 
-           rel="noopener noreferrer" 
-           aria-label="External link to article"
-           data-tooltip="InForm: UNICEF's Self-Service Data Collection Platform">🔗 </a>
-          <a href="https://files.rd4c.org/RD4C_Inform.pdf"
-           class="link-icon tooltip-link" 
-           target="_blank" 
-           rel="noopener noreferrer" 
-           aria-label="External link to article"
-           data-tooltip="InForm - Responsible Data For Children Case Study">🔗 </a>
-        </li>
-        <li style="margin-bottom: 0.5em;">Contributed to IDIOM, UNICEF’s strategic framework to identify frontier data and AI capabilities</li>
-        <li>Developed reusable toolkits and templates for internal teams on real-time campaign monitoring and AI best practices</li>
-      </ul>
+  <div class="section-block languages">
+    <h3>Languages</h3>
+    <p><strong>Italian</strong> – Native</p>
+    <p><strong>English</strong> – Complete proficiency</p>
+    <p><strong>French</strong> – Complete working knowledge</p>
+  </div>
 
-      <p class="job-title">Data & Analytics Manager (Consultant), Integrate Health</p>
-      <div class="job-meta">
-        <span class="job-dates">Mar. 2020 - Sep. 2020</span>
-        <span class="job-location">Kara, Togo</span>
-      </div>
-      <ul class="justified-paragraph">
-        <li style="margin-bottom: 0.5em;">Developed a framework to guide data investment decisions for a global health NGO</li>
-        <li>Advised senior management on data strategy and capacity building for analytics</li>
-      </ul>
+  <div class="section-block certificates">
+    <h3>Certificates</h3>
+    <p><strong>Ethical AI in Practice</strong> - Data.org, May 2025</p>
+    <p><strong>Big Data For Social Good</strong> - Harvard Online, Oct 2024</p>
+  </div>
 
-      <p class="job-title">Co-Founder & Chief Operating Officer, Impact Intel</p>
-      <div class="job-meta">
-        <span class="job-dates">Aug. 2019 - Mar. 2020</span>
-        <span class="job-location">London, UK</span>
-      </div>
-      <ul class="justified-paragraph">
-        <li style="margin-bottom: 0.5em;">Co-founded a data consultancy supporting social impact organizations</li>
-        <li>Designed service offerings and guided international NGO data strategies in Togo and Senegal</li>
-      </ul>
+  <div class="section-block honors">
+    <h3>Honors & Awards</h3>
+    <p><strong>🏆 Values Ambassador (EMEA)</strong> - Tableau, 2017</p>
+  </div>
 
-      <p class="job-title">Regional Data Coordinator, UN World Food Programme</p>
-      <div class="job-meta">
-        <span class="job-dates">Mar. 2018 - Aug. 2019</span>
-        <span class="job-location">Johannesburg, South Africa</span>
-      </div>
-      <ul class="justified-paragraph">
-        <li style="margin-bottom: 0.5em;">Co-designed WFP’s data stewardship positions across three regions</li>
-        <li>Mentored junior data engineers and established professional development programs</li>
-      </ul>
-
-      <p class="job-title">Data & Analytics Consultant, The Information Lab</p>
-      <div class="job-meta">
-        <span class="job-dates">Jun. 2015 - Mar. 2018</span>
-        <span class="job-location">London, UK</span>
-      </div>
-      <ul class="justified-paragraph">
-        <li style="margin-bottom: 0.5em;">Led data analytics implementation for clients such as BCG, UBS, Deloitte, and Virgin Atlantic
-           <a href="https://www.thedataschool.co.uk/andy-kriebel/interview-nicco-cirone/"
-           class="link-icon tooltip-link" 
-           target="_blank" 
-           rel="noopener noreferrer" 
-           aria-label="External link to article"
-           data-tooltip="An interview with my supervisor and me on my work at VAA">🔗 </a>
-        </li>
-        <li style="margin-bottom: 0.5em;">Developed dashboards, ML models, and decision-support tools used by executives and analysts</li>
-      </ul>
-
-      <p class="job-title">Business Intelligence & Strategy Associate, MondoMostre</p>
-      <div class="job-meta">
-        <span class="job-dates">Sep. 2010 - Jun. 2015</span>
-        <span class="job-location">Rome, Italy</span>
-      </div>
-      <ul class="justified-paragraph">
-        <li style="margin-bottom: 0.5em;">Led business intelligence and strategic activities for a global project management firm</li>
-        <li style="margin-bottom: 0.5em;">Secured over €5.5 million in tenders and managed projects with budgets over €4 million</li>
-      </ul>
-      
+  <div class="section-block startups">
+    <h3>Startups</h3>
+    <p>Co-founded:</p>
+    <div class="startups-icons">
+      <a href="https://montedelgallo.com/" class="tooltip-link" data-tooltip="Monte del Gallo - Sofware Development Boutique" target="_blank" rel="noopener noreferrer">
+        <img src="img/MDG_100.webp" alt="MonteDelGallo Icon" class="icon">
+      </a>
+      <a href="https://impactintel.org/" class="tooltip-link" data-tooltip="Impact Intel - Analytics Consultancy for the Social Impact Sector" target="_blank" rel="noopener noreferrer">
+        <img src="img/Impact_Intel_100.webp" alt="Impact Intel Icon" class="icon">
+      </a>
+      <a href="https://consultala.com/" class="tooltip-link" data-tooltip="ConsultaLa - Accounting Sofware House" target="_blank" rel="noopener noreferrer">
+        <img src="img/consultala.webp" alt="Consultala Icon" class="icon">
+      </a>
     </div>
   </div>
+
+  <div class="section-block summary">
+    <h1>Niccolò Cirone</h1>
+    <h2 class="subheading">AI & Data Analytics Manager</h2>
+    <h2>Summary</h2>
+    <p class="justified-paragraph">Experienced data and AI programme manager with extensive know-how in leading multidisciplinary teams of data scientists, ML engineers, and subject matter experts to build and implement transformative AI solutions. Expert in co-designing, developing, and executing long term analytics and AI strategies for value generation, I bring over a decade of entrepreneurial, corporate, and consultancy experiences in the private sector, social sector, and the UN. Internationally educated and multi-lingual in English, French, and Italian. Recognized as a proactive, solution-oriented, self-starter and team player.</p>
+  </div>
+
+  <div class="section-block work-experience">
+    <h2>Work Experience</h2>
+
+    <p class="job-title-first">Data Specialist (T4D), UNICEF West and Central Africa Regional Office</p>
+    <div class="job-meta">
+      <span class="job-dates">Nov. 2022 – Current</span>
+      <span class="job-location">Dakar, Senegal</span>
+    </div>
+    <ul class="justified-paragraph">
+      <li>Coordinate a diverse portfolio of data and AI initiatives to boost the efficacy and effectiveness of UNICEF's programming</li>
+      <li>Co-led the development of UNICEF’s first corporate AI Strategy to identify high-impact opportunities for AI and analytics</li>
+      <li>Led the "Reach the Unreached" initiative, securing over $2M in funding to apply AI for vaccination and birth registration 
+        <a href="https://data.unicef.org/data-for-action/reaching-the-unreached-with-life-saving-vaccines-through-data-science-and-geospatial-technologies/" class="link-icon tooltip-link" target="_blank" rel="noopener noreferrer" aria-label="External link to article" data-tooltip="Data for Action Blog Post">🔗</a>
+        <a href="https://data.unicef.org/resources/reaching-the-unreached-with-life-saving-vaccines-through-data-science-and-geospatial-technologies/" class="link-icon tooltip-link" target="_blank" rel="noopener noreferrer" aria-label="External link to article" data-tooltip="Technical Brief">🔗</a>
+        <a href="https://www.unicef.org/blog/digital-zero-dose-harnessing-ai-global-health-equity" class="link-icon tooltip-link" target="_blank" rel="noopener noreferrer" aria-label="External link to article" data-tooltip="Blog Post from the G20">🔗</a>
+        <a href="https://mapaction.org/putting-children-on-the-map-in-west-and-central-africa-through-geo-spatial-analysis/" class="link-icon tooltip-link" target="_blank" rel="noopener noreferrer" aria-label="External link to article" data-tooltip="Partner Article - MapAction">🔗</a>
+        <a href="https://www.cartong.org/mettre-les-enfants-sur-la-carte-en-afrique-de-louest-et-du-centre-grace-a-lanalyse-geospatiale/" class="link-icon tooltip-link" target="_blank" rel="noopener noreferrer" aria-label="External link to article" data-tooltip="Partner Article - CartONG">🔗</a>
+        <a href="https://storymaps.arcgis.com/stories/f8802fc4dc424bbeab69093088ace38e/" class="link-icon tooltip-link" target="_blank" rel="noopener noreferrer" aria-label="External link to article" data-tooltip="Storymap: RtU in Chad">🔗</a></li>
+      <li>Founded WCARO’s Regional Frontier Data Tech Node, mentoring junior data scientists and scaling AI initiatives across 24 countries</li>
+      <li>Presented at academic events and international summits to keep UNICEF at the forefront of AI trends</li>
+    </ul>
+
+    <p class="job-title">Data Specialist (T4D), UNICEF East Asia and Pacific Regional Office</p>
+    <div class="job-meta">
+      <span class="job-dates">Sep. 2020 - Nov. 2022</span>
+      <span class="job-location">Bangkok, Thailand</span>
+    </div>
+    <ul class="justified-paragraph">
+      <li>Founded and coordinated UNICEF’s first Regional Frontier Data Tech Node to enhance AI project execution 
+        <a href="https://www.unicef.org/eap/stories/how-big-data-and-ai-saved-lives-indonesia" class="link-icon tooltip-link" target="_blank" rel="noopener noreferrer" aria-label="External link to article" data-tooltip="How Big Data and AI Saved Lives in Indonesia">🔗</a>
+        <a href="https://www.unicef.org/png/reports/revolutionizing-immunization-data-management-papua-new-guinea-rt-vama" class="link-icon tooltip-link" target="_blank" rel="noopener noreferrer" aria-label="External link to article" data-tooltip="RT-VaMA: Real Time Monitoring of Immunization Campaigns">🔗</a></li>
+      <li>Raised over $600,000 to develop InForm, UNICEF’s common data platform 
+        <a href="https://inform.unicef.org/" class="link-icon tooltip-link" target="_blank" rel="noopener noreferrer" aria-label="External link to article" data-tooltip="InForm: UNICEF's Self-Service Data Collection Platform">🔗</a>
+        <a href="https://files.rd4c.org/RD4C_Inform.pdf" class="link-icon tooltip-link" target="_blank" rel="noopener noreferrer" aria-label="External link to article" data-tooltip="InForm - Responsible Data For Children Case Study">🔗</a></li>
+      <li>Contributed to IDIOM, UNICEF’s strategic framework to identify frontier data and AI capabilities</li>
+      <li>Developed reusable toolkits and templates for internal teams on real-time campaign monitoring and AI best practices</li>
+    </ul>
+
+    <p class="job-title">Data & Analytics Manager (Consultant), Integrate Health</p>
+    <div class="job-meta">
+      <span class="job-dates">Mar. 2020 - Sep. 2020</span>
+      <span class="job-location">Kara, Togo</span>
+    </div>
+    <ul class="justified-paragraph">
+      <li>Developed a framework to guide data investment decisions for a global health NGO</li>
+      <li>Advised senior management on data strategy and capacity building for analytics</li>
+    </ul>
+
+    <p class="job-title">Co-Founder & Chief Operating Officer, Impact Intel</p>
+    <div class="job-meta">
+      <span class="job-dates">Aug. 2019 - Mar. 2020</span>
+      <span class="job-location">London, UK</span>
+    </div>
+    <ul class="justified-paragraph">
+      <li>Co-founded a data consultancy supporting social impact organizations</li>
+      <li>Designed service offerings and guided international NGO data strategies in Togo and Senegal</li>
+    </ul>
+
+    <p class="job-title">Regional Data Coordinator, UN World Food Programme</p>
+    <div class="job-meta">
+      <span class="job-dates">Mar. 2018 - Aug. 2019</span>
+      <span class="job-location">Johannesburg, South Africa</span>
+    </div>
+    <ul class="justified-paragraph">
+      <li>Co-designed WFP’s data stewardship positions across three regions</li>
+      <li>Mentored junior data engineers and established professional development programs</li>
+    </ul>
+
+    <p class="job-title">Data & Analytics Consultant, The Information Lab</p>
+    <div class="job-meta">
+      <span class="job-dates">Jun. 2015 - Mar. 2018</span>
+      <span class="job-location">London, UK</span>
+    </div>
+    <ul class="justified-paragraph">
+      <li>Led data analytics implementation for clients such as BCG, UBS, Deloitte, and Virgin Atlantic 
+        <a href="https://www.thedataschool.co.uk/andy-kriebel/interview-nicco-cirone/" class="link-icon tooltip-link" target="_blank" rel="noopener noreferrer" aria-label="External link to article" data-tooltip="An interview with my supervisor and me on my work at VAA">🔗</a></li>
+      <li>Developed dashboards, ML models, and decision-support tools used by executives and analysts</li>
+    </ul>
+
+    <p class="job-title">Business Intelligence & Strategy Associate, MondoMostre</p>
+    <div class="job-meta">
+      <span class="job-dates">Sep. 2010 - Jun. 2015</span>
+      <span class="job-location">Rome, Italy</span>
+    </div>
+    <ul class="justified-paragraph">
+      <li>Led business intelligence and strategic activities for a global project management firm</li>
+      <li>Secured over €5.5 million in tenders and managed projects with budgets over €4 million</li>
+    </ul>
+  </div>
+
+</div>
+
 </body>
 </html>

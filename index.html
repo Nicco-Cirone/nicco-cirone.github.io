@@ -57,7 +57,21 @@
   max-width: 300px;
   box-sizing: border-box;
   flex-shrink: 0;
-}
+  }
+  
+  .photo-wrapper {
+  display: flex;
+  justify-content: center;
+  margin-bottom: 20px;
+  }
+  
+.profile-photo {
+  border-radius: 50%;
+  width: 170px;
+  height: 170px;
+  object-fit: cover;
+  }
+
   
   @font-face {
     font-family: 'Open Sans';
@@ -382,7 +396,9 @@
 <div class="container">
 <div class="sidebar">
   <div class="section-block contact">
-    <img src="img/photo.webp" alt="Niccolò Cirone" style="border-radius: 50%; width: 170px; height: 170px; object-fit: cover; margin-bottom: 20px;">
+    <div class="photo-wrapper">
+      <img src="img/photo.webp" alt="Niccolò Cirone" class="profile-photo">
+    </div>
     <div class="contact-icons">
       <a href="https://www.linkedin.com/in/niccolocirone/" class="tooltip-link" data-tooltip="LinkedIn Profile" target="_blank" rel="noopener noreferrer">
         <img src="img/Linkedin.webp" alt="LinkedIn Icon" class="icon">

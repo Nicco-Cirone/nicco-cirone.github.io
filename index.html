@@ -274,6 +274,8 @@
   }
 
   .container {
+    display: flex;               /* 👈 required to restore flow */
+    flex-direction: column;     /* 👈 stack sidebar and main vertically */
     width: 100vw;
     max-width: 100vw;
     margin: 0;
@@ -306,7 +308,7 @@
     height: 32px;
   }
 
-   .mobile-section-block-summary {
+  .mobile-section-block-summary {
     display: block;
     text-align: center;
     margin: 20px 0;
@@ -315,10 +317,7 @@
   .desktop-section-block-summary {
     display: none;
   }
-
-   
 }
-
 
   @media (prefers-color-scheme: dark) {
     body {

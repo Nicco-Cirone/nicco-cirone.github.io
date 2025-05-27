@@ -229,8 +229,10 @@
   
  @media (max-width: 768px) {
   body {
+    padding: 0;
     max-width: 100%;
     overflow-x: hidden;
+    font-size: 13px;
     background-image: none;
     background-color: #fff;
     background-attachment: scroll, scroll;
@@ -288,20 +290,16 @@
 
 
   @media (prefers-color-scheme: dark) {
-    
-    html, body {
-    max-width: 100%;
-    overflow-x: hidden;
-    }
-
-    
     body {
-    background: #121212;
-    background-image: none;
-    background-repeat: initial;
-    background-position: initial;
-    background-attachment: initial;
-    background-size: initial;
+      background-color: #121212;
+      color: #f0f0f0;
+      background-image:
+        url('img/background-dark.webp'),
+        url('img/background-dark_mirror.webp');
+      background-repeat: repeat-y, repeat-y;
+      background-position: left top, right top;
+      background-attachment: fixed, fixed;
+      background-size: auto, auto;
     }
 
     .container {

@@ -244,6 +244,10 @@ ul {
   display: block;
 }
 
+.mobile-cover-image-wrapper {
+  display: none;
+}
+  
 /* Mobile-specific overrides */
 @media (max-width: 768px) {
   body {
@@ -299,6 +303,31 @@ ul {
   .desktop-section-block-summary {
     display: none;
   }
+
+.mobile-cover-image-wrapper {
+    display: block;
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100px; /* Adjust as needed for overlap */
+    z-index: 1;
+    overflow: hidden;
+  }
+
+  .mobile-cover-image {
+    width: 100%;
+    height: auto;
+    object-fit: cover;
+    display: block;
+  }
+
+  .photo-wrapper {
+    position: relative;
+    margin-top: -50px; /* Pull photo up to overlap the image halfway */
+    z-index: 2;
+  }
+  
 }
 
 
@@ -346,12 +375,18 @@ ul {
   }
 }
 
-  
 </style>
 
 
 </head>
 <body>
+<div class="mobile-cover-image-wrapper">
+  <picture>
+    <source srcset="img/mobile-cover-dark.webp" media="(prefers-color-scheme: dark)">
+    <img src="img/mobile-cover-light.webp" alt="" class="mobile-cover-image">
+  </picture>
+</div>
+
 <div class="container">
 <div class="sidebar">
   <div class="section-block contact">

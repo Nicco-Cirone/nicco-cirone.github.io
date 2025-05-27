@@ -26,6 +26,7 @@
   
 <!--  <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;700&display=swap" rel="stylesheet"> -->
 <style>
+
 @font-face {
   font-family: 'Open Sans';
   font-style: normal;
@@ -52,31 +53,19 @@ html, body {
   overflow-x: hidden;
   font-family: 'Open Sans', sans-serif;
   background-color: #fff;
+  background-image: 
+    url('img/background.webp'),
+    url('img/background_mirror.webp');
+  background-repeat: repeat-y, repeat-y;
+  background-position: left top, right top;
+  background-attachment: fixed, fixed;
+  background-size: contain, contain;
   min-height: 100vh;
 }
 
 img, svg {
   max-width: 100%;
   height: auto;
-}
-
-.bg-left,
-.bg-right {
-  position: fixed;
-  top: 0;
-  bottom: 0;
-  width: auto;
-  height: 100%;
-  z-index: -1;
-  pointer-events: none;
-}
-
-.bg-left {
-  left: 0;
-}
-
-.bg-right {
-  right: 0;
 }
 
 .container {
@@ -257,16 +246,15 @@ ul {
 
 /* Mobile-specific overrides */
 @media (max-width: 768px) {
-  .bg-left,
-  .bg-right {
-    display: none;
-  }
-
   body {
     padding: 0;
     max-width: 100%;
     overflow-x: hidden;
     font-size: 13px;
+    background-image: none;
+    background-attachment: scroll;
+    background-position: left top;
+    background-size: contain;
   }
 
   .container {
@@ -313,11 +301,19 @@ ul {
   }
 }
 
+
 /* Dark mode overrides */
 @media (prefers-color-scheme: dark) {
   html, body {
     background-color: #121212;
     color: #f0f0f0;
+    background-image:
+      url('img/background-dark.webp'),
+      url('img/background-dark_mirror.webp');
+    background-repeat: repeat-y, repeat-y;
+    background-position: left top, right top;
+    background-attachment: fixed, fixed;
+    background-size: contain, contain;
   }
 
   .container {
@@ -349,24 +345,13 @@ ul {
     color: #4fc3f7;
   }
 }
+
+  
 </style>
 
 
 </head>
 <body>
-<!-- Background visuals (left and right) -->
-<picture class="bg-left">
-  <source media="(prefers-color-scheme: dark) and (min-width: 769px)" srcset="img/background-dark.webp">
-  <source media="(min-width: 769px)" srcset="img/background.webp">
-  <img src="img/background.webp" alt="" aria-hidden="true" loading="lazy">
-</picture>
-
-<picture class="bg-right">
-  <source media="(prefers-color-scheme: dark) and (min-width: 769px)" srcset="img/background-dark_mirror.webp">
-  <source media="(min-width: 769px)" srcset="img/background_mirror.webp">
-  <img src="img/background_mirror.webp" alt="" aria-hidden="true" loading="lazy">
-</picture>
-
 <div class="container">
 <div class="sidebar">
   <div class="section-block contact">

@@ -230,9 +230,14 @@
  @media (max-width: 768px) {
   body {
     padding: 0;
+    max-width: 100%;
+    overflow-x: hidden;
     font-size: 13px;
     background-image: none;
     background-color: #fff;
+    background-attachment: scroll, scroll;
+    background-size: contain, contain;
+    background-position: left top, right top;
   }
 
   .container {
@@ -248,7 +253,7 @@
   .sidebar,
   .main {
     width: 100%;
-    /*padding: 20px;*/
+    padding: 20px;
     box-sizing: border-box;
     min-width: 0;
   }
@@ -329,8 +334,13 @@
 
   @media (prefers-color-scheme: dark) and (max-width: 768px) {
   body {
+    max-width: 100%;
+    overflow-x: hidden;
     background-image: none;
     background-color: #121212;
+    background-attachment: scroll, scroll;
+    background-size: contain, contain;
+    background-position: left top, right top;
   }
 }
   

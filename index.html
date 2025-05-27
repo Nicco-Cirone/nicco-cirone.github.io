@@ -67,7 +67,7 @@ img, svg {
   bottom: 0;
   width: auto;
   height: 100%;
-  z-index: 0; /* changed from -1 */
+  z-index: -1;
   pointer-events: none;
 }
 
@@ -78,32 +78,6 @@ img, svg {
 .bg-right {
   right: 0;
 }
-
-picture.bg-left,
-picture.bg-right {
-  position: relative; /* added */
-  display: block;
-  height: 100%;
-}
-
-picture.bg-left img,
-picture.bg-right img {
-  height: 100%;
-  object-fit: cover;
-  position: absolute;
-  top: 0;
-  bottom: 0;
-}
-
-picture.bg-left img {
-  left: 0;
-}
-
-picture.bg-right img {
-  right: 0;
-}
-
-
 
 .container {
   display: flex;
@@ -378,23 +352,21 @@ ul {
 </style>
 
 
-
 </head>
 <body>
 <!-- Background visuals (left and right) -->
-<div aria-hidden="true">
-  <picture class="bg-left">
+<picture class="bg-left">
   <source media="(prefers-color-scheme: dark) and (min-width: 769px)" srcset="img/background-dark.webp">
   <source media="(min-width: 769px)" srcset="img/background.webp">
   <img src="img/background.webp" alt="" aria-hidden="true" loading="lazy">
 </picture>
 
-  <picture class="bg-right">
-    <source media="(prefers-color-scheme: dark) and (min-width: 769px)" srcset="img/background-dark_mirror.webp">
-    <source media="(min-width: 769px)" srcset="img/background_mirror.webp">
-    <img src="img/background_mirror.webp" alt="" aria-hidden="true" loading="lazy">
-  </picture>
-</div>
+<picture class="bg-right">
+  <source media="(prefers-color-scheme: dark) and (min-width: 769px)" srcset="img/background-dark_mirror.webp">
+  <source media="(min-width: 769px)" srcset="img/background_mirror.webp">
+  <img src="img/background_mirror.webp" alt="" aria-hidden="true" loading="lazy">
+</picture>
+
 <div class="container">
 <div class="sidebar">
   <div class="section-block contact">

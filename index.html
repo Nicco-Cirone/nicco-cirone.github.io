@@ -290,16 +290,20 @@
 
 
   @media (prefers-color-scheme: dark) {
+    
+    html, body {
+    max-width: 100%;
+    overflow-x: hidden;
+    }
+
+    
     body {
-      background-color: #121212;
-      color: #f0f0f0;
-      background-image:
-        url('img/background-dark.webp'),
-        url('img/background-dark_mirror.webp');
-      background-repeat: repeat-y, repeat-y;
-      background-position: left top, right top;
-      background-attachment: fixed, fixed;
-      background-size: auto, auto;
+    background: #121212;
+    background-image: none;
+    background-repeat: initial;
+    background-position: initial;
+    background-attachment: initial;
+    background-size: initial;
     }
 
     .container {

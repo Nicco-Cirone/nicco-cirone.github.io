@@ -27,254 +27,224 @@
 <!--  <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;700&display=swap" rel="stylesheet"> -->
 <style>
 
-  * {
-    box-sizing: border-box;
-  }
+@font-face {
+  font-family: 'Open Sans';
+  font-style: normal;
+  font-weight: 400;
+  src: url('/fonts/OpenSans-Regular.woff2') format('woff2');
+  font-display: swap;
+}
 
-  html, body {
+@font-face {
+  font-family: 'Open Sans';
+  font-style: normal;
+  font-weight: 700;
+  src: url('/fonts/OpenSans-Bold.woff2') format('woff2');
+  font-display: swap;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+html, body {
   overflow-x: hidden;
-  }
-  
-  img, svg {
-    max-width: 100%;
-    height: auto;
-  }
+  margin: 0;
+  padding: 20px 0 40px 0;
+  font-family: 'Open Sans', sans-serif;
+  background-color: #fff;
+  background-image: 
+    url('img/background.webp'),
+    url('img/background_mirror.webp');
+  background-repeat: repeat-y, repeat-y;
+  background-position: left top, right top;
+  background-attachment: fixed, fixed;
+  background-size: auto, auto;
+}
 
-  .container {
-  max-width: 900px;
-  margin: 20px auto;
+img, svg {
+  max-width: 100%;
+  height: auto;
+}
+
+.container {
   display: flex;
   flex-direction: row;
   width: 100%;
-  box-shadow: 0 0 10px rgba(0,0,0,0.1);
+  max-width: 900px;
+  margin: 20px auto;
   background-color: #fff;
-  }
-  
+  box-shadow: 0 0 10px rgba(0,0,0,0.1);
+}
+
 .sidebar {
+  background-color: #f4f0ec;
   width: 300px;
-  padding: 30px;
   min-width: 300px;
   max-width: 300px;
-  box-sizing: border-box;
+  padding: 30px;
   flex-shrink: 0;
-  }
-  
-  .photo-wrapper {
+  box-sizing: border-box;
+  color: #333;
+}
+
+.main {
+  flex-grow: 1;
+  padding: 30px;
+  box-sizing: border-box;
+  max-width: 100%;
+  overflow-wrap: break-word;
+}
+
+.photo-wrapper {
   display: flex;
   justify-content: center;
   margin-bottom: 20px;
-  }
-  
+}
+
 .profile-photo {
   border-radius: 50%;
   width: 170px;
   height: 170px;
   object-fit: cover;
-  }
+}
 
-  
-  @font-face {
-    font-family: 'Open Sans';
-    font-style: normal;
-    font-weight: 400;
-    src: url('/fonts/OpenSans-Regular.woff2') format('woff2');
-    font-display: swap;
-  }
+h1 {
+  margin-top: 0;
+}
 
-  @font-face {
-    font-family: 'Open Sans';
-    font-style: normal;
-    font-weight: 700;
-    src: url('/fonts/OpenSans-Bold.woff2') format('woff2');
-    font-display: swap;
-  }
+h2 {
+  border-bottom: 1px solid #000;
+  padding-bottom: 4px;
+  margin-top: 40px;
+}
 
-  body {
-    margin: 0;
-    padding: 20px 0 40px 0;
-    font-family: 'Open Sans', sans-serif;
-    background-color: #fff;
-    background-image: 
-      url('img/background.webp'),
-      url('img/background_mirror.webp');
-    background-repeat: repeat-y, repeat-y;
-    background-position: left top, right top;
-    background-attachment: fixed, fixed;
-    background-size: auto, auto;
-  }
+h2.subheading {
+  border: none;
+  padding: 0;
+  margin: 10px 0 20px 0;
+  font-size: 1.17em;
+  font-weight: bold;
+}
 
-  .container {
-    display: flex;
-    flex-direction: row;
-    max-width: 900px;
-    margin: 20px auto;
-    box-shadow: 0 0 10px rgba(0,0,0,0.1);
-    background-color: #fff;
-    width: 100%;
-  }
+ul {
+  padding-left: 20px;
+}
 
-  .sidebar {
-    background-color: #f4f0ec;
-    width: 300px;
-    padding: 30px;
-    box-sizing: border-box;
-    color: #333;
-  }
+.justified-paragraph {
+  text-align: justify;
+  text-justify: inter-word;
+}
 
-  .main {
-    flex-grow: 1;
-    padding: 30px;
-    box-sizing: border-box;
-    max-width: 100%;
-    overflow-wrap: break-word;
-  }
+.contact,
+.education,
+.skills,
+.languages,
+.certificates,
+.honors,
+.startups {
+  margin-bottom: 40px;
+}
 
-  h1 {
-    margin-top: 0;
-  }
+.contact p,
+.skills p {
+  margin: 8px 0;
+}
 
-  h2 {
-    border-bottom: 1px solid #000;
-    padding-bottom: 4px;
-    margin-top: 40px;
-  }
+.job-title,
+.job-title-first {
+  font-weight: bold;
+}
 
-  h2.subheading {
-    border: none;
-    padding: 0;
-    margin: 10px 0 20px 0;
-    font-size: 1.17em;
-    font-weight: bold;
-  }
+.job-title {
+  margin-top: 30px;
+}
 
-  ul {
-    padding-left: 20px;
-  }
+.job-dates,
+.job-location {
+  font-style: italic;
+}
 
-  .justified-paragraph {
-    text-align: justify;
-    text-justify: inter-word;
-  }
+.job-meta {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 10px;
+}
 
-  .contact,
-  .education,
-  .skills,
-  .languages,
-  .certificates,
-  .honors,
-  .startups {
-    margin-bottom: 40px;
-  }
+.contact-icons,
+.startups-icons {
+  display: flex;
+  justify-content: center;
+  gap: 12px;
+  margin-top: 10px;
+}
 
-  .contact p,
-  .skills p {
-    margin: 8px 0;
-  }
+.contact-icons .icon,
+.startups-icons .icon {
+  width: 40px;
+  height: 40px;
+  margin-bottom: 40px;
+}
 
-  .job-title {
-    font-weight: bold;
-    margin-top: 30px;
-  }
+.startups-icons .icon {
+  border-radius: 50%;
+  object-fit: cover;
+}
 
-  .job-title-first {
-    font-weight: bold;
-  }
+.link-icon {
+  text-decoration: none;
+  color: inherit;
+  margin-left: 4px;
+  font-size: 0.9em;
+  display: inline-block;
+  transition: transform 0.2s ease, color 0.2s ease;
+}
 
-  .job-dates {
-    font-style: italic;
-  }
+.tooltip-link {
+  position: relative;
+  cursor: pointer;
+  text-decoration: none;
+  color: inherit;
+}
 
-  .job-meta {
-    display: flex;
-    justify-content: space-between;
-    margin-bottom: 10px;
-  }
+.tooltip-link::after {
+  content: attr(data-tooltip);
+  position: absolute;
+  bottom: 125%;
+  left: 50%;
+  transform: translateX(-50%);
+  background-color: #333;
+  color: #fff;
+  padding: 4px 8px;
+  border-radius: 4px;
+  font-size: 12px;
+  white-space: nowrap;
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity 0.2s ease;
+  z-index: 100;
+}
 
-  .job-location {
-    font-style: italic;
-  }
+.tooltip-link:hover::after {
+  opacity: 1;
+}
 
-  .contact-icons {
-    display: flex;
-    justify-content: center;
-    gap: 12px;
-    margin-top: 10px;
-  }
+.tooltip-link:hover {
+  color: #007acc;
+  transform: scale(1.15);
+  transition: color 0.2s ease, transform 0.2s ease;
+}
 
-  .contact-icons .icon {
-    width: 40px;
-    height: 40px;
-    margin-bottom: 40px;
-  }
-
-  .startups-icons {
-    display: flex;
-    justify-content: center;
-    gap: 12px;
-    margin-top: 10px;
-  }
-
-  .startups-icons .icon {
-    width: 40px;
-    height: 40px;
-    margin-bottom: 40px;
-    border-radius: 50%;
-    object-fit: cover;
-  }
-
-  .link-icon {
-    text-decoration: none;
-    color: inherit;
-    margin-left: 4px;
-    font-size: 0.9em;
-    display: inline-block;
-    transition: transform 0.2s ease, color 0.2s ease;
-  }
-
-  .tooltip-link {
-    position: relative;
-    cursor: pointer;
-    text-decoration: none;
-    color: inherit;
-  }
-
-  .tooltip-link::after {
-    content: attr(data-tooltip);
-    position: absolute;
-    bottom: 125%;
-    left: 50%;
-    transform: translateX(-50%);
-    background-color: #333;
-    color: #fff;
-    padding: 4px 8px;
-    border-radius: 4px;
-    font-size: 12px;
-    white-space: nowrap;
-    opacity: 0;
-    pointer-events: none;
-    transition: opacity 0.2s ease;
-    z-index: 100;
-  }
-
-  .tooltip-link:hover::after {
-    opacity: 1;
-  }
-
-  .tooltip-link:hover {
-    color: #007acc;
-    transform: scale(1.15);
-    transition: color 0.2s ease, transform 0.2s ease;
-  }
-
-  .mobile-section-block-summary {
+.mobile-section-block-summary {
   display: none;
 }
 
-  .desktop-section-block-summary {
-    display: block;
-  }
-  
- @media (max-width: 768px) {
+.desktop-section-block-summary {
+  display: block;
+}
+
+/* Mobile-specific overrides */
+@media (max-width: 768px) {
   body {
     padding: 0;
     max-width: 100%;
@@ -282,14 +252,13 @@
     font-size: 13px;
     background-image: none;
     background-color: #fff;
-    background-attachment: scroll, scroll;
-    background-size: contain, contain;
-    background-position: left top, right top;
+    background-attachment: scroll;
+    background-size: contain;
+    background-position: left top;
   }
 
   .container {
-    display: flex;               /* 👈 required to restore flow */
-    flex-direction: column;     /* 👈 stack sidebar and main vertically */
+    flex-direction: column;
     width: 100vw;
     max-width: 100vw;
     margin: 0;
@@ -302,7 +271,6 @@
     width: 100vw;
     max-width: 100vw;
     padding: 20px;
-    box-sizing: border-box;
   }
 
   .profile-photo {
@@ -333,60 +301,63 @@
   }
 }
 
-  @media (prefers-color-scheme: dark) {
-    body {
-      background-color: #121212;
-      color: #f0f0f0;
-      background-image:
-        url('img/background-dark.webp'),
-        url('img/background-dark_mirror.webp');
-      background-repeat: repeat-y, repeat-y;
-      background-position: left top, right top;
-      background-attachment: fixed, fixed;
-      background-size: auto, auto;
-    }
-
-    .container {
-      background-color: #1e1e1e;
-      box-shadow: 0 0 10px rgba(255,255,255,0.05);
-    }
-
-    .sidebar {
-      background-color: #222;
-      color: #eee;
-    }
-
-    .main {
-      background-color: #1e1e1e;
-      color: #f0f0f0;
-    }
-
-    h1, h2, h3, .job-title, .job-dates, .job-location {
-      color: #fff;
-    }
-
-    .tooltip-link::after {
-      background-color: #eee;
-      color: #222;
-    }
-
-    a.link-icon:hover,
-    .tooltip-link:hover {
-      color: #4fc3f7;
-    }
+/* Dark mode overrides */
+@media (prefers-color-scheme: dark) {
+  body {
+    background-color: #121212;
+    color: #f0f0f0;
+    background-image:
+      url('img/background-dark.webp'),
+      url('img/background-dark_mirror.webp');
+    background-repeat: repeat-y;
+    background-position: left top;
+    background-attachment: fixed;
+    background-size: auto;
   }
 
-  @media (prefers-color-scheme: dark) and (max-width: 768px) {
+  .container {
+    background-color: #1e1e1e;
+    box-shadow: 0 0 10px rgba(255,255,255,0.05);
+  }
+
+  .sidebar {
+    background-color: #222;
+    color: #eee;
+  }
+
+  .main {
+    background-color: #1e1e1e;
+    color: #f0f0f0;
+  }
+
+  h1, h2, h3, .job-title, .job-dates, .job-location {
+    color: #fff;
+  }
+
+  .tooltip-link::after {
+    background-color: #eee;
+    color: #222;
+  }
+
+  a.link-icon:hover,
+  .tooltip-link:hover {
+    color: #4fc3f7;
+  }
+}
+
+/* Mobile dark mode override */
+@media (prefers-color-scheme: dark) and (max-width: 768px) {
   body {
     max-width: 100%;
     overflow-x: hidden;
     background-image: none;
     background-color: #121212;
-    background-attachment: scroll, scroll;
-    background-size: contain, contain;
-    background-position: left top, right top;
+    background-attachment: scroll;
+    background-size: contain;
+    background-position: left top;
   }
 }
+
   
 </style>
 
